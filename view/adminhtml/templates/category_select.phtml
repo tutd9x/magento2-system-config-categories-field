@@ -2,8 +2,9 @@
 /**
  * @var \Tudn\SystemCategoriesField\Block\Adminhtml\Settings\CategorySelect $block
  */
+$htmlId = $block->getData('html_id') ?? "";
 ?>
-<div data-bind="scope: 'magento-categories-select'" class="scalable" style="width: 500px">
+<div data-bind="scope: 'magento-categories-select<?=$htmlId?>'" class="scalable" style="width: 500px">
     <!-- ko template: getTemplate() --><!-- /ko -->
 </div>
 <script type="text/x-magento-init">
@@ -11,7 +12,7 @@
         "*": {
             "Magento_Ui/js/core/app": {
                 "components": {
-                    "magento-categories-select": <?= $block->getJsConfig() ?>
+                    "magento-categories-select<?=$htmlId?>": <?= $block->getJsConfig() ?>
                 }
             }
         }

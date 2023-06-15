@@ -76,6 +76,7 @@ class CategorySelect extends Field
         $block = $this->getLayout()
             ->createBlock(Template::class)
             ->setTemplate('Tudn_SystemCategoriesField::category_select.phtml')
+            ->setData('html_id', $element->getHtmlId())
             ->setJsConfig($jsConfig);
 
         $html .= $block->toHtml();
